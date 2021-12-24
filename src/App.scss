@@ -1,0 +1,82 @@
+$primary-color: #295B6C;
+$white-color: #fff;
+$black-color: #232323;
+
+html, body {
+  min-height: 100%;
+  font-size: 16px;
+  background-color: lighten($primary-color, 40);
+  scroll-behavior: smooth;
+
+  .container {
+
+    .card {
+      border: 0;
+      border-radius: 4px;
+      overflow: hidden;
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+
+      &.editor {
+
+        &.full {
+          width: 50%;
+          height: 100vh;
+        }
+      }
+
+      &.preview {
+        @extend .editor;
+
+        &.full {
+          width: 75%;
+          height: 100%;
+        }
+      }
+
+      &-header {
+        padding: 10px 15px;
+        color: $black-color;
+        background-color: lighten($primary-color, 30);
+
+        .fas {
+          font-size: 18px;
+          cursor: pointer;
+          transition: all 0.5s ease;
+
+          &:hover {
+            color: $primary-color;
+          }
+        }
+      }
+
+      &-body {
+        padding: 0;
+        display: flex;
+
+        textarea {
+          width: 100%;
+          padding: 10px;
+          resize: none;
+          border: 0;
+          overflow-y: scroll;
+          font-size: 14px;
+          color: $black-color;
+          background-color: lighten($primary-color, 50);
+
+          &:focus {
+            outline: none;
+            box-shadow: none;
+          }
+        }
+
+        .preview-area {
+          width: 100%;
+          height: auto;
+          padding: 10px 15px;
+          color: $black-color;
+          background-color: lighten($primary-color, 50);
+        }
+      }
+    }
+  }
+}
